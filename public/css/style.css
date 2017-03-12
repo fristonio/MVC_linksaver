@@ -1,0 +1,193 @@
+*{
+	margin: 0;
+	padding:0;
+}
+
+/*Style for the login/register page of the app*/
+body{
+	overflow-x: hidden;
+}
+#maindiv{
+	width: 100vw;
+	height: 100vh;
+	perspective: 1000px;
+}
+.navpage{
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	display: flex;
+	transform-style: preserve-3d;
+	perspective: 700px;
+
+}
+.login-nav{
+	height: 100vh;
+	width: 50vw;
+	background: black;
+	transform-origin: 0% 50%;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px white solid;
+}
+.register-nav{
+	height: 100vh;
+	width: 50vw;
+	transform-origin: 100% 50%;
+	transition: transform 1s;
+	transform-style: preserve-3d;
+	background: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.log-reg{
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	display: none;
+	}
+.login{
+	height: 100vh;
+	width: 50%;
+	background: rgba(0,0,0,0.95);
+	display: none;
+	position: relative;
+	float: left;
+}
+.logindiv{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.logindiv form{
+	margin:0 35%;
+}
+.logindiv h1{
+	color: #ccc;
+}
+.input-group{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.login div form{
+	text-align: center;
+}
+.register{
+	height: 100vh;
+	width: 50%;
+	background: rgba(0,0,0,0.95);
+	display: none;
+	position: relative;
+	float: right;
+}
+.registerdiv{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.registerdiv h1{
+	color: #ccc;
+}
+.register div form{
+	text-align: center;
+}
+.register input{
+	margin: 15px 0;
+}
+#preloader{
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	background: white;
+	position: fixed;
+}
+#preloader img{
+	height: 70px;
+	width: auto;
+}
+.phperror{
+	padding: 20px;
+	text-align: center;
+	background: #FDCECE;
+	margin:0 10vw;
+	border: 2px red solid;
+	border-radius: 10px;
+	position: fixed;
+	color: black;
+	z-index: 800;
+	width: 80vw;
+}
+.phpsuccess{
+	padding: 20px;
+	text-align: center;
+	background: #DCFCC4;
+	margin:0 2vw;
+	border: 2px green solid;
+	border-radius: 10px;
+	position: fixed;
+	z-index: 800;
+	margin:0 10vw;
+	width: 80vw;
+}
+
+#show-links h2{
+	text-align: center;
+}
+#add-links{
+	background: rgba(0,0,0,0.8);
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+	border-radius: 5px;
+	flex-direction: column;
+	align-items: center;	
+}	
+#add-links{
+	color: white;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+#login-nav{
+	padding: 5px 30px 12px 30px;
+	border:1.5px white solid;
+	color: white; 
+	background: black;
+}
+#register-nav{
+	padding: 5px 30px 12px 30px;
+	border:1.5px white solid;
+	color: white; 
+	background: black;
+}
+#login-nav h3{
+	vertical-align: middle;
+}
+#mailbtn{
+	text-align: center;
+}
+.glyphicon-remove{
+	cursor: pointer;
+}
