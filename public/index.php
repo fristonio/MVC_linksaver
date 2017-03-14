@@ -9,4 +9,7 @@
 		'/' => Link\Controllers\HomeController::class,
 		'/home.html' => Link\Controllers\HomeController::class,
 		'/login' => Link\Controllers\LoginController::class,
+		'/register' => Link\Controllers\RegController::class,
+		'/dashboard' => Link\Controller\DashboardController::class,
+		'/admin' => Link\Controllers\AdminController::class,
 	]);
