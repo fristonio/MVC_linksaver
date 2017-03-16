@@ -46,14 +46,16 @@
 			        <th>Delete</th>
 			      </tr>
 			    </thead>
+			    {% set i=1 %}
 			    <tbody id="tablebody">
 			    	{% for link in links %}
 			    		<tr id="{{link.lid}}">
-							<td>Sno</td>
+							<td>{{i}}</td>
 							<td><a href='{{link.link}}' target='_blank'>{{link.link}}</a></td>
 							<td>{{link.description}}</td>
 							<td class='linkdelete'><span class='glyphicon glyphicon-remove'></span></td>
 						</tr>
+						{% set i=i+1 %}
 			    	{% endfor %}
 			    </tbody>
 			 </table>
