@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+		<nav class="navbar navbar-inverse">
+ 			<div class="container-fluid">
+ 			    <div class="navbar-header">
+ 			      <a class="navbar-brand" href="#">{{user.username}}</a>
+ 			    </div>
+ 			    <ul class="nav navbar-nav">
+     				 <li class="active"><a href="#">DASHBOARD</a></li>
+   				</ul>
+ 			    <ul class="nav navbar-nav navbar-right">
+ 			    	<li><a href="#">{{user.email}}</a></li>
+ 			      <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
+ 			    </ul>
+ 			 </div>
+ 		</nav>
+	
+ 		<div id="add-links" class="container">
+ 			<h3>Enter the links you want to save</h3>
+ 			<form action="/dashboard" id="link-form" method="post">
+ 				<div class="input-group">
+ 					<label for="">Link</label>
+ 					<input type="text" name="link" required class="form-control">
+ 				</div>
+ 				<div class="input-group">
+ 					<label for="">Description</label>
+ 					<input type="text" name="description" class="form-control">
+ 				</div>
+ 				<div class="input-group">
+ 					<input type="submit" value="Submit" name="link-submit" class="form-control btn btn-danger">
+ 				</div>
+ 				
+ 			</form>
+ 		</div>	
+ 		<div id="show-links" class="container">
+ 			<h2>Saved Links</h2>
+ 			<table class="table table-striped">
+				 <thead>
+			      <tr>
+			        <th>S.No</th>
+			        <th>Link</th>
+			        <th>Description</th>
+			        <th>Delete</th>
+			      </tr>
+			    </thead>
+			    <tbody id="tablebody">
+			    	{% for link in links %}
+			    		<tr id="{{link.lid}}">
+							<td>Sno</td>
+							<td><a href='{{link.link}}' target='_blank'>{{link.link}}</a></td>
+							<td>{{link.description}}</td>
+							<td class='linkdelete'><span class='glyphicon glyphicon-remove'></span></td>
+						</tr>
+			    	{% endfor %}
+			    </tbody>
+			 </table>
+			 <form id="mailbtn" action="" method="post">
+			 	<input type="submit" class="btn btn-success" name="mailme" value="Mail to Me">
+			 </form>
+ 		</div>
+
+{% endblock %}

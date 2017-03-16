@@ -28,7 +28,7 @@ $(document).ready(function(){
                	element.remove();
             }
         };
-        xmlhttp.open("GET", "deletelink.php?listid=" +this.parentNode.id, true);
+        xmlhttp.open("GET", "/deletelink?listid=" +this.parentNode.id, true);
         xmlhttp.send();
 	}	
 	for (let i = 0; i < linkdel.length; i++) {

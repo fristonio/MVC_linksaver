@@ -11,6 +11,7 @@
 		'/home.html' => Link\Controllers\HomeController::class,
 		'/login' => Link\Controllers\LoginController::class,
 		'/register' => Link\Controllers\RegisterController::class,
-		'/dashboard' => Link\Controller\DashboardController::class,
+		'/dashboard' => Link\Controllers\DashboardController::class,
 		'/admin' => Link\Controllers\AdminController::class,
+		'/deletelink' => Link\Controllers\DeleteLinkController::class,
 	]);

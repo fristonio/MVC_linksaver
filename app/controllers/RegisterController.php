@@ -1,8 +1,8 @@
 <?php 
 
 	namespace Link\Controllers;
-	use Link\Models\Signup;
-	class RegisterController {
+	use Link\Models\Users;
+	class RegisterController extends ViewController {
 		public function post() {
 			if (isset($_POST["reg-submit"])) {
 				$nameErr=$emailErr=$passErr='';
@@ -37,11 +37,11 @@
 
 
 				if ($error === 1) {
-					header("location:/");
+					$this->render("home.html");
 				}
 				else{
 					$data = array(':email' => $email ,':pass' => $_POST["pass"], ':name' => $name );
-					$addUser = Signup::addUser($data);
+					$addUser = Users::addUser($data);
 					if ($addUser) {
 						header("location:/");
 						//echo "User has been addedto database";
