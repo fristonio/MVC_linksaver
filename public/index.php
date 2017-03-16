@@ -14,4 +14,5 @@
 		'/dashboard' => Link\Controllers\DashboardController::class,
 		'/admin' => Link\Controllers\AdminController::class,
 		'/deletelink' => Link\Controllers\DeleteLinkController::class,
+		'/logout' => Link\Controllers\LogoutController::class
 	]);

@@ -38,8 +38,19 @@
 			}
 		}
 
-		public function deleteLink() {
-
+		public function deleteLink($deleteLinkData) {
+			try {
+				$conn = self::DB();
+				$conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+				$query = "DELETE FROM links WHERE uid=:uid AND lid=:lid";
+				$stmt = $conn->prepare($query);
+				$stmt->execute($deleteLinkData);
+				return true;
+			}
+			catch (\PDOException $e) {
+				echo $e->getMessage();
+				return false;
+			}
 		}
 	}
 
