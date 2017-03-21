@@ -1,0 +1,8 @@
+{
+	"dbhost" : "",
+	"dbuser" : "",
+	"dbpass" : "",
+	"dbname" : "",
+	"mailermail" : "",
+	"mailerpass" : ""
+}

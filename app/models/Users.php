@@ -12,10 +12,14 @@
 			try {
 				$conn = self::DB();
 				$conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-				$query = "SELECT uid, email, username FROM users WHERE email=:email and password=:pass";
+				$query = "SELECT uid, email, username, password FROM users WHERE email=:email";
 				$stmt = $conn->prepare($query);
-				$stmt->execute($userData);
-				return $stmt->fetch(\PDO::FETCH_ASSOC);
+				$stmt->execute(array(":email" => $userData[":email"]));
+				while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+					if (password_verify($userData[":pass"], $row["password"])) {
+						return array("username" => $row["username"], "email" => $row["email"], "uid" => $row["uid"]);
+					}
+				}
 			}
 			catch (\PDOException $e) {
 				echo $e->getMessage();

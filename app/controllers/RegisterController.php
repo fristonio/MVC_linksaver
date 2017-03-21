@@ -40,7 +40,7 @@
 					$this->render("home.html");
 				}
 				else{
-					$data = array(':email' => $email ,':pass' => $_POST["pass"], ':name' => $name );
+					$data = array(':email' => $email ,':pass' => password_hash($_POST["pass"], PASSWORD_DEFAULT), ':name' => $name );
 					$addUser = Users::addUser($data);
 					if ($addUser) {
 						header("location:/");
@@ -58,7 +58,7 @@
 		}
 
 		public function get() {
-			header("location:/");
+			header("Location: /");
 		}
 
 		public function sanitize($data){

@@ -43,7 +43,7 @@
 						//$_SESSION["password"]=$validate["password"];
 						//setcookie("username", $validate["username"], time() + (86400 * 30));
 						//setcookie("email", $validate["email"], time() + (86400 * 30));
-						header("location:/dashboard");
+						header("Location: /dashboard");
 					}
 				}
 			}

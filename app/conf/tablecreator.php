@@ -9,8 +9,8 @@
 		uid INT AUTO_INCREMENT PRIMARY KEY,
 		username varchar(30) NOT NULL,
 		email varchar(30) NOT NULL UNIQUE,
-		password varchar(64) NOT NULL,
-		verifyHash varchar(64) NOT NULL,
+		password varchar(255) NOT NULL,
+		verifyHash varchar(255) NOT NULL,
 		state varchar(10) NOT NULL DEFAULT 'Inactive');";
 
 		$queryTable2 = "CREATE TABLE links(

@@ -8,7 +8,7 @@
 	});
 	Toro::serve([
 		'/' => Link\Controllers\HomeController::class,
-		'/home.html' => Link\Controllers\HomeController::class,
+		'/home' => Link\Controllers\HomeController::class,
 		'/login' => Link\Controllers\LoginController::class,
 		'/register' => Link\Controllers\RegisterController::class,
 		'/dashboard' => Link\Controllers\DashboardController::class,
